@@ -1,10 +1,10 @@
 ﻿//inicio del programa
-
+/*
 //ejercicio 1
 //Solicita al usuario un número y eleva este número al cuadrado solo si es positivo
 
 using System.ComponentModel;
-/*
+
 Console.WriteLine("EJERCICIO 1 POSITIVE POWER");
 var positivepower = new positivePower();
 String resultado = positivepower.cuadradoPositivo();
@@ -43,7 +43,7 @@ var perimetro = new circleOrPerimeter();
 Double resultado4=  perimetro.circleorperimeter();
 Console.WriteLine("el resultado del ejercicio 4 es "+resultado4);
 
-*/
+
 
 
 
@@ -57,6 +57,29 @@ Console.WriteLine("el resultado del ejercicio 5 es "+resultado5);
 
 
 
+
+//ejercicio 6
+Console.WriteLine("EJERCICIO 6 TAX CALCULATOR");
+var impuesto= new taxCalculator();
+string resultado6= impuesto.taxcalculator();
+Console.WriteLine("el resultado del ejercicio 6 es "+resultado6);
+
+
+
+
+//ejercicio 7
+Console.WriteLine("EJERCICIO 7 REMAINDER FINDER");
+var residuo = new remainderFinder ();
+int resultado7 = residuo.remainderfinder();
+Console.WriteLine("el resultado del ejercicio 7 es "+resultado7);
+
+*/
+
+//ejercicio 8
+Console.WriteLine("EJERCICIO 8 SUM OF EVENS");
+var suma = new sumOfEvens();
+int resultado8 = suma.sumofevens();
+Console.WriteLine("el resultado del ejercicio 8 es "+resultado8);
 
 //CLASES Y METODOS DE LOS EJERCICIOS
 
@@ -239,6 +262,73 @@ break;
 return resultado;
 }
 
+}
+
+public class taxCalculator{
+
+public string taxcalculator(){
+string resultado="";
+Boolean esNum=false;
+int numero=0;
+while(!esNum){
+Console.WriteLine("Ingresa tu salario anual");
+var entrada = Console.ReadLine();
+esNum= int.TryParse(entrada, out numero);
+}
+
+if(numero>12000) {//paga impuestos
+int resta=numero-12000;
+double operacion=resta*0.15;
+resultado= operacion.ToString();
+}
+else{
+resultado="No debe impuestos";
+
+} return resultado;
+}
+
+
+}
+
+public class remainderFinder{
+
+public int remainderfinder(){
+int dividiendo=0;
+int divisor=0;    
+Boolean esNum=false;
+
+while(!esNum) {
+Console.WriteLine("escribe numero 1 (dividiendo)");
+var entrada = Console.ReadLine();
+esNum= int.TryParse(entrada, out dividiendo);
+}
+esNum=false;
+
+while(!esNum) {
+Console.WriteLine("escribe numero 2 (divisor)");
+var entrada = Console.ReadLine();
+esNum= int.TryParse(entrada, out divisor);
+}
+
+int residuo= dividiendo % divisor;
+return residuo;
+}
+
+
+}
+
+
+public class sumOfEvens{
+
+public int sumofevens(){
+int suma=0;
+for(int i=0;i<51;i++){//hasta 51 porque lo esta tomando hasta el 49
+//residuo a ver si da cero
+if(i % 2==0){suma=suma+i; }
+
+}
+return suma;
+}
 
 
 }
