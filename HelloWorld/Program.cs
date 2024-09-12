@@ -34,7 +34,7 @@ double resultado3 = raizCuadrado.rootorsquare();
 Console.WriteLine("El resultado del ejercicio 3 es "+resultado3);
 
 
-*/
+
 
 
 //ejercicio 4
@@ -43,12 +43,17 @@ var perimetro = new circleOrPerimeter();
 Double resultado4=  perimetro.circleorperimeter();
 Console.WriteLine("el resultado del ejercicio 4 es "+resultado4);
 
+*/
 
 
 
 
 
-
+//ejercicio 5
+Console.WriteLine("EJERCICIO 5 MIDWEEK DAY");
+var diaSemana = new midWeekDay();
+var resultado5= diaSemana.midweekday();
+Console.WriteLine("el resultado del ejercicio 5 es "+resultado5);
 
 
 
@@ -194,6 +199,46 @@ double pi= Math.PI;
 double perimetro= 2 * pi * radio;
 return perimetro;
 }
+
+
+}
+
+
+public class midWeekDay{
+
+public string midweekday(){
+Boolean esNum=false;
+int numero=0;
+string resultado="";
+while(!esNum){
+Console.WriteLine("Ingresa el dia de la semana");
+var entrada = Console.ReadLine();
+esNum= int.TryParse(entrada, out numero);
+}
+
+switch(numero){
+case 1:
+resultado="Lunes";
+break;
+case 2:
+resultado="Martes";
+break;
+case 3:
+resultado="Miercoles";
+break;
+case 4:
+resultado="Jueves";
+break;
+case 5:
+resultado="Viernes";
+break;
+default:
+resultado="Numero fuera del rango laboral";
+break;
+}
+return resultado;
+}
+
 
 
 }
