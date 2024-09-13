@@ -1,10 +1,12 @@
 ﻿//inicio del programa
-/*
+
 //ejercicio 1
 //Solicita al usuario un número y eleva este número al cuadrado solo si es positivo
 
 using System.ComponentModel;
-
+using System.Runtime.CompilerServices;
+using System.Xml.Schema;
+/*
 Console.WriteLine("EJERCICIO 1 POSITIVE POWER");
 var positivepower = new positivePower();
 String resultado = positivepower.cuadradoPositivo();
@@ -67,19 +69,40 @@ Console.WriteLine("el resultado del ejercicio 6 es "+resultado6);
 
 
 
-//ejercicio 7
+//ejercicio 7, con try catch
 Console.WriteLine("EJERCICIO 7 REMAINDER FINDER");
 var residuo = new remainderFinder ();
 int resultado7 = residuo.remainderfinder();
 Console.WriteLine("el resultado del ejercicio 7 es "+resultado7);
 
-*/
+
 
 //ejercicio 8
 Console.WriteLine("EJERCICIO 8 SUM OF EVENS");
 var suma = new sumOfEvens();
 int resultado8 = suma.sumofevens();
 Console.WriteLine("el resultado del ejercicio 8 es "+resultado8);
+
+
+
+
+
+
+//ejercicio 10
+Console.WriteLine("EJERCICIO 10 String Length ");
+var tamanio= new StringLength();
+int resultado9= tamanio.stringlength();
+Console.WriteLine("El resultado del ejercicio 10 es "+resultado9);
+*/
+
+//ejercicio 11
+Console.WriteLine("EJERCICIO 11 Average of Four");
+var promedio= new AverageOfFour();
+double resultado11= promedio.Averageoffour();
+Console.WriteLine("el resultado del ejercicio 11 es "+resultado11);
+
+
+
 
 //CLASES Y METODOS DE LOS EJERCICIOS
 
@@ -293,6 +316,7 @@ resultado="No debe impuestos";
 public class remainderFinder{
 
 public int remainderfinder(){
+int residuo=0;
 int dividiendo=0;
 int divisor=0;    
 Boolean esNum=false;
@@ -309,8 +333,10 @@ Console.WriteLine("escribe numero 2 (divisor)");
 var entrada = Console.ReadLine();
 esNum= int.TryParse(entrada, out divisor);
 }
-
-int residuo= dividiendo % divisor;
+try{
+ residuo= dividiendo % divisor;} catch (DivideByZeroException ex) {
+Console.WriteLine("Error en la operacion, no puedes divir por cero "+ex);
+}
 return residuo;
 }
 
@@ -329,6 +355,62 @@ if(i % 2==0){suma=suma+i; }
 }
 return suma;
 }
+
+
+}
+
+//ejercicio 10
+public class StringLength{
+
+public int stringlength(){
+Console.WriteLine("escribe una palabra");
+var  palabra = Console.ReadLine();
+int tamanio= palabra.Length;
+
+return tamanio;
+}
+
+}
+
+public class AverageOfFour{
+public double Averageoffour() {
+
+int numero1=0;
+int numero2=0;
+int numero3=0;
+int numero4=0;
+double promedio=0.0;
+
+Boolean esNum=false;
+
+while(!esNum){
+Console.WriteLine("Ingresa el primer numero");
+var entrada1= Console.ReadLine();
+esNum= int.TryParse(entrada1, out numero1);
+}
+esNum=false;
+while(!esNum){
+Console.WriteLine("Ingresa el segundo numero");
+var entrada1= Console.ReadLine();
+esNum= int.TryParse(entrada1, out numero2);
+}
+esNum=false;
+while(!esNum){
+Console.WriteLine("Ingresa el tercer numero");
+var entrada1= Console.ReadLine();
+esNum= int.TryParse(entrada1, out numero3);
+}
+esNum=false;
+while(!esNum){
+Console.WriteLine("Ingresa el cuarto numero");
+var entrada1= Console.ReadLine();
+esNum= int.TryParse(entrada1, out numero4);
+}
+
+promedio= (numero1+numero2+numero3+numero4)/4;
+return promedio;
+}
+
 
 
 }
