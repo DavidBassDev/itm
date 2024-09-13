@@ -93,7 +93,7 @@ Console.WriteLine("EJERCICIO 10 String Length ");
 var tamanio= new StringLength();
 int resultado9= tamanio.stringlength();
 Console.WriteLine("El resultado del ejercicio 10 es "+resultado9);
-*/
+
 
 //ejercicio 11
 Console.WriteLine("EJERCICIO 11 Average of Four");
@@ -102,6 +102,18 @@ double resultado11= promedio.Averageoffour();
 Console.WriteLine("el resultado del ejercicio 11 es "+resultado11);
 
 
+//ejercicio 12
+Console.WriteLine("EJERCICIO 12  Smallest of Five");
+var numeroMasBajo = new SmallestOfFive();
+int resultado12= numeroMasBajo.smallestoffive();
+Console.WriteLine("el resultado del ejercicio 12 es "+resultado12);
+*/
+
+//ejercicio 13
+Console.WriteLine("EJERCICIO 13 Vowel Counter");
+var vocales = new VowelCounter();
+int resultado13= vocales.vowercounter();
+Console.WriteLine("el resultado del ejercicio 13 es "+resultado13);
 
 
 //CLASES Y METODOS DE LOS EJERCICIOS
@@ -375,10 +387,10 @@ return tamanio;
 public class AverageOfFour{
 public double Averageoffour() {
 
-int numero1=0;
-int numero2=0;
-int numero3=0;
-int numero4=0;
+double numero1=0.0;
+double numero2=0.0;
+double numero3=0.0;
+double numero4=0.0;
 double promedio=0.0;
 
 Boolean esNum=false;
@@ -386,29 +398,127 @@ Boolean esNum=false;
 while(!esNum){
 Console.WriteLine("Ingresa el primer numero");
 var entrada1= Console.ReadLine();
-esNum= int.TryParse(entrada1, out numero1);
+esNum= double.TryParse(entrada1, out numero1);
 }
 esNum=false;
 while(!esNum){
 Console.WriteLine("Ingresa el segundo numero");
 var entrada1= Console.ReadLine();
-esNum= int.TryParse(entrada1, out numero2);
+esNum= double.TryParse(entrada1, out numero2);
 }
 esNum=false;
 while(!esNum){
 Console.WriteLine("Ingresa el tercer numero");
 var entrada1= Console.ReadLine();
-esNum= int.TryParse(entrada1, out numero3);
+esNum= double.TryParse(entrada1, out numero3);
 }
 esNum=false;
 while(!esNum){
 Console.WriteLine("Ingresa el cuarto numero");
 var entrada1= Console.ReadLine();
-esNum= int.TryParse(entrada1, out numero4);
+esNum= double.TryParse(entrada1, out numero4);
 }
 
 promedio= (numero1+numero2+numero3+numero4)/4;
 return promedio;
+}
+
+}
+
+public class  SmallestOfFive {
+
+public int smallestoffive(){
+
+//pide 5 numeros, muestra el mas pequeño
+
+int numero1=0;
+int numero2=0;
+int numero3=0;
+int numero4=0;
+int numero5=0;
+int numeroMasBajo=9999;
+Boolean esNum=false;
+
+while(!esNum){
+Console.WriteLine("ingresa numero 1");
+var entrada= Console.ReadLine();
+esNum= int.TryParse(entrada, out numero1);
+}
+if(numero1<numeroMasBajo){numeroMasBajo=numero1;}
+esNum=false;
+while(!esNum){
+Console.WriteLine("ingresa numero 2");
+var entrada= Console.ReadLine();
+esNum= int.TryParse(entrada, out numero2);
+}
+if(numero2<numeroMasBajo){numeroMasBajo=numero2;}
+esNum=false;
+while(!esNum){
+Console.WriteLine("ingresa numero 3");
+var entrada= Console.ReadLine();
+esNum= int.TryParse(entrada, out numero3);
+}
+if(numero3<numeroMasBajo){numeroMasBajo=numero3;}
+esNum=false;
+while(!esNum){
+Console.WriteLine("ingresa numero 4");
+var entrada= Console.ReadLine();
+esNum= int.TryParse(entrada, out numero4);
+}
+if(numero4<numeroMasBajo){numeroMasBajo=numero4;}
+esNum=false;
+while(!esNum){
+Console.WriteLine("ingresa numero 5");
+var entrada= Console.ReadLine();
+esNum= int.TryParse(entrada, out numero5);
+}
+if(numero5<numeroMasBajo){numeroMasBajo=numero5;}
+
+
+return numeroMasBajo;
+}
+
+
+}
+
+public class VowelCounter{
+
+public int vowercounter(){
+int contador=0;
+
+Console.WriteLine("Escribe una palabra");
+var palabra= Console.ReadLine();
+
+for(int i=0;i<palabra.Length;i++){
+
+var caracter=palabra[i];
+
+switch(caracter){
+
+case 'a':
+contador++;
+break;
+case 'e':
+contador++;
+break;
+case 'i':
+contador++;
+break;
+case 'o':
+contador++;
+break;
+case 'u':
+contador++;
+break;
+
+}
+
+
+}
+
+
+return contador;
+
 }
 
 
