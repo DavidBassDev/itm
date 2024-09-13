@@ -107,13 +107,32 @@ Console.WriteLine("EJERCICIO 12  Smallest of Five");
 var numeroMasBajo = new SmallestOfFive();
 int resultado12= numeroMasBajo.smallestoffive();
 Console.WriteLine("el resultado del ejercicio 12 es "+resultado12);
-*/
+
 
 //ejercicio 13
 Console.WriteLine("EJERCICIO 13 Vowel Counter");
 var vocales = new VowelCounter();
 int resultado13= vocales.vowercounter();
 Console.WriteLine("el resultado del ejercicio 13 es "+resultado13);
+
+
+
+
+//ejercicio 14 Factorial Finder
+Console.WriteLine("EJERCICIO 14 FACTORIAL FINDER");
+var factorial = new FactorialFinder();
+int resultado14 = factorial.factorialfinder();
+Console.WriteLine("el resultado del ejercicio 14 es "+resultado14);
+
+
+*/
+
+
+//ejercicio 15 inRange Validator
+Console.WriteLine("EJERCICIO 15 INRANGE VALIDATOR");
+var enRango= new inRangeValidator();
+var resultado15= enRango.inrangevalidator();
+Console.WriteLine("el resultado del ejercicio 15 es "+resultado15);
 
 
 //CLASES Y METODOS DE LOS EJERCICIOS
@@ -520,6 +539,55 @@ break;
 return contador;
 
 }
+
+}
+
+public class FactorialFinder {
+
+public int factorialfinder(){
+Boolean esNum=false;
+int numero=0;
+int resultado=1;
+
+while(!esNum){
+Console.WriteLine("ingresa un numero");
+var entrada= Console.ReadLine();
+esNum= int.TryParse(entrada, out numero);
+}
+for(int i=1;i<numero+1;i++) {
+
+resultado= resultado*i;
+
+}
+
+return resultado;
+}
+
+
+}
+
+public class inRangeValidator{
+
+public string inrangevalidator(){
+int numero=0;
+Boolean esNum=false;
+string respuesta="";
+
+while(!esNum) {
+Console.WriteLine("Escribe un numero");
+var entrada= Console.ReadLine();
+esNum= int.TryParse(entrada, out numero);
+}
+
+if(numero>=10 && numero<=20) {
+
+respuesta="está en el rango";
+
+} else {respuesta="fuera del rango";}
+
+return respuesta;
+}
+
 
 
 
