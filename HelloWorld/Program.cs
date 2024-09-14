@@ -1,17 +1,16 @@
 ﻿//inicio del programa
-
+/*
 //ejercicio 1
 //Solicita al usuario un número y eleva este número al cuadrado solo si es positivo
 
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Xml.Schema;
-/*
+
 Console.WriteLine("EJERCICIO 1 POSITIVE POWER");
 var positivepower = new positivePower();
 String resultado = positivepower.cuadradoPositivo();
 Console.WriteLine("resultado del ejercicio 1 es "+resultado);
-
 
 
 
@@ -24,7 +23,7 @@ Console.WriteLine("EJERCICIO 2 DOUBLE OR TRIPLE");
 var dobleOtriple = new DoubleOrTriple ();
 int impresion = dobleOtriple.DoubleTriple();
 Console.WriteLine("El resultado del ejercicio 2 es "+impresion);
-
+*/
 
 
 
@@ -125,7 +124,7 @@ int resultado14 = factorial.factorialfinder();
 Console.WriteLine("el resultado del ejercicio 14 es "+resultado14);
 
 
-*/
+
 
 
 //ejercicio 15 inRange Validator
