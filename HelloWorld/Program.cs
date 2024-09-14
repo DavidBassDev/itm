@@ -1,5 +1,5 @@
 ﻿//inicio del programa
-/*
+
 //ejercicio 1
 //Solicita al usuario un número y eleva este número al cuadrado solo si es positivo
 
@@ -23,7 +23,7 @@ Console.WriteLine("EJERCICIO 2 DOUBLE OR TRIPLE");
 var dobleOtriple = new DoubleOrTriple ();
 int impresion = dobleOtriple.DoubleTriple();
 Console.WriteLine("El resultado del ejercicio 2 es "+impresion);
-*/
+
 
 
 
