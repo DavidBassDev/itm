@@ -2,19 +2,24 @@ import 'dart:io';
 
 void main() {
   var problema1 = new positivePower();
-  double resultado1 = problema1.positivepower();
+  String resultado1 = problema1.positivepower();
   print("el resultado del primer ejercicio es $resultado1");
 }
 
 class positivePower {
-  double positivepower() {
-    double resultado = 0.0;
+  String positivepower() {
+    String resultado = "0";
     print("escibe un numero");
     double? numero = double.tryParse(stdin.readLineSync()!);
-    print("escibe segundo numero");
-    double? numero2 = double.tryParse(stdin.readLineSync()!);
-    if (numero != null && numero2 != null) {
-      resultado = numero + numero2;
+    if (numero != null) {
+      if (numero > 0) {
+        double positive = numero * numero;
+        resultado = positive.toString();
+      } else if (numero < 0) {
+        resultado = "numero negativo";
+      } else {
+        resultado = "0";
+      }
     } else {
       print("alguno de los dos numeros no son validos");
     }
