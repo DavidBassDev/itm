@@ -29,12 +29,18 @@ void main() {
   var problema5 = new midWeekDay();
   String resultado5 = problema5.midweekday();
   print("el resultado del ejercicio 5 es $resultado5");
-  */
+  
 
   //EJERCICIO 6
   var problema6 = new taxCalculator();
   String resultado6 = problema6.taxcalculator();
   print("el resultado del ejercicio 6 es $resultado6");
+  */
+
+  //EJERCICIO 7
+  var problema7 = new remainderFinder();
+  int resultado7 = problema7.remainderfinder();
+  print("el resultado del ejercicio 7 es $resultado7");
 }
 
 class positivePower {
@@ -206,6 +212,36 @@ class taxCalculator {
       resultado = "no debe impuestos";
     }
     return resultado;
+  }
+}
+
+class remainderFinder {
+  int remainderfinder() {
+    String? entrada;
+    int? numero1 = 0;
+    int? numero2 = 0;
+    print("ingresa el primer numero");
+    entrada = stdin.readLineSync();
+    bool esNum = esNumero(entrada);
+    while (!esNum) {
+      print("escribe un numero valido");
+      entrada = stdin.readLineSync();
+    }
+    if (entrada != null) {
+      numero1 = int.tryParse(entrada);
+    }
+    print("escribe el segundo numero");
+    entrada = stdin.readLineSync();
+    esNum = esNumero(entrada);
+    while (!esNum) {
+      print("escribe un numero valido");
+      entrada = stdin.readLineSync();
+    }
+    if (entrada != null) {
+      numero2 = int.tryParse(entrada);
+    }
+    int finder = numero1! % numero2!;
+    return finder;
   }
 }
 
