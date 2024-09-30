@@ -1,14 +1,33 @@
 import 'dart:io';
+import 'dart:math';
 
 void main() {
   /* var problema1 = new positivePower();
   String resultado1 = problema1.positivepower();
   print("el resultado del primer ejercicio es $resultado1");
-*/
+
   //EJERCICIO 2
   var problema2 = new DoubleOrTriple();
   int resultado2 = problema2.doubleortriple();
   print("el resultado del ejercicio 2 es $resultado2");
+
+
+//EJERCICIO 3
+  var problema3 = new rootOrSquare();
+  double resultado3 = problema3.rootorsquare();
+  print("el resultado del ejercicio 3 es $resultado3");
+  
+
+  //EJERCICIO 4
+  var problema4 = new circleOrPerimeter();
+  double resultado4 = problema4.circleorperimeter();
+  print("el resultado del ejercicio 4 es $resultado4");
+  */
+
+  //EJERCICIO 5
+  var problema5 = new midWeekDay();
+  String resultado5 = problema5.midweekday();
+  print("el resultado del ejercicio 5 es $resultado5");
 }
 
 class positivePower {
@@ -64,6 +83,93 @@ class DoubleOrTriple {
       } else {
         resultado = numero1 + numero1;
       }
+    }
+    return resultado;
+  }
+}
+
+class rootOrSquare {
+  double rootorsquare() {
+    bool esNum = false;
+    double? resultado = 0;
+    print("ingresa un numero");
+    String? entrada = stdin.readLineSync();
+    esNum = esNumero(entrada);
+    while (!esNum) {
+      print("ingresa un numero");
+      String? entrada = stdin.readLineSync();
+      esNum = esNumero(entrada);
+    }
+    if (entrada != null) {
+      resultado = double.tryParse(entrada);
+      if (resultado! > 0) {
+        resultado = sqrt(resultado);
+      } else if (resultado == 0) {
+        resultado = 0.0;
+      } else {
+        resultado = resultado * resultado;
+      }
+    }
+    return resultado;
+  }
+}
+
+class circleOrPerimeter {
+  double circleorperimeter() {
+    double perimetro = 0.0;
+    print("ingresa el radio del circulo");
+
+    String? entrada = stdin.readLineSync();
+    bool esNum = esNumero(entrada);
+    while (!esNum) {
+      print("ingresa el radio del circulo");
+      String? entrada = stdin.readLineSync();
+      bool esNum = esNumero(entrada);
+    }
+
+    double? radio = double.tryParse(entrada!);
+    if (radio != null) {
+      perimetro = 2 * pi * radio;
+    }
+
+    return perimetro;
+  }
+}
+
+class midWeekDay {
+  String midweekday() {
+    String resultado = "";
+    int? numero = 0;
+    print("ingresa un dia de la semana");
+    String? entrada = stdin.readLineSync();
+    bool esNum = esNumero(entrada);
+    while (!esNum) {
+      print("ingresa un numero valido");
+      entrada = stdin.readLineSync();
+      esNum = esNumero(entrada);
+    }
+    if (entrada != null) {
+      numero = int.tryParse(entrada);
+    }
+
+    switch (numero) {
+      case 1:
+        resultado = "Lunes";
+        break;
+      case 2:
+        resultado = "Martes";
+        break;
+      case 3:
+        resultado = "Miercoles";
+        break;
+      case 4:
+        resultado = "Jueves";
+        break;
+      case 5:
+        resultado = "Viernes";
+        break;
+      default:
+        resultado = "Numero fuera del rango laboral";
     }
     return resultado;
   }
