@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 import 'dart:math';
 
@@ -22,12 +23,18 @@ void main() {
   var problema4 = new circleOrPerimeter();
   double resultado4 = problema4.circleorperimeter();
   print("el resultado del ejercicio 4 es $resultado4");
-  */
+  
 
   //EJERCICIO 5
   var problema5 = new midWeekDay();
   String resultado5 = problema5.midweekday();
   print("el resultado del ejercicio 5 es $resultado5");
+  */
+
+  //EJERCICIO 6
+  var problema6 = new taxCalculator();
+  String resultado6 = problema6.taxcalculator();
+  print("el resultado del ejercicio 6 es $resultado6");
 }
 
 class positivePower {
@@ -170,6 +177,33 @@ class midWeekDay {
         break;
       default:
         resultado = "Numero fuera del rango laboral";
+    }
+    return resultado;
+  }
+}
+
+class taxCalculator {
+  String taxcalculator() {
+    int? salario = 0;
+    double? calculo;
+    String resultado = "";
+    print("ingresa tu salaio");
+    String entrada = stdin.readLineSync()!;
+    bool esNum = esNumero(entrada);
+    while (!esNum) {
+      print("no es numero, ingresa tu salario");
+      entrada = stdin.readLineSync()!;
+      esNum = esNumero(entrada);
+    }
+    if (entrada != null) {
+      salario = int.tryParse(entrada);
+    }
+    if (salario! > 12000) {
+      int excedente = salario - 12000;
+      calculo = excedente * 0.15;
+      resultado = calculo.toString();
+    } else if (salario <= 12000) {
+      resultado = "no debe impuestos";
     }
     return resultado;
   }
