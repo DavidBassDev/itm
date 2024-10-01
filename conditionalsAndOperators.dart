@@ -3,7 +3,7 @@ import 'dart:io';
 import 'dart:math';
 
 void main() {
-  /* var problema1 = new positivePower();
+  var problema1 = new positivePower();
   String resultado1 = problema1.positivepower();
   print("el resultado del primer ejercicio es $resultado1");
 
@@ -12,48 +12,65 @@ void main() {
   int resultado2 = problema2.doubleortriple();
   print("el resultado del ejercicio 2 es $resultado2");
 
-
 //EJERCICIO 3
   var problema3 = new rootOrSquare();
   double resultado3 = problema3.rootorsquare();
   print("el resultado del ejercicio 3 es $resultado3");
-  
 
   //EJERCICIO 4
   var problema4 = new circleOrPerimeter();
   double resultado4 = problema4.circleorperimeter();
   print("el resultado del ejercicio 4 es $resultado4");
-  
 
   //EJERCICIO 5
   var problema5 = new midWeekDay();
   String resultado5 = problema5.midweekday();
   print("el resultado del ejercicio 5 es $resultado5");
-  
 
   //EJERCICIO 6
   var problema6 = new taxCalculator();
   String resultado6 = problema6.taxcalculator();
   print("el resultado del ejercicio 6 es $resultado6");
-  
 
   //EJERCICIO 7
   var problema7 = new remainderFinder();
   int resultado7 = problema7.remainderfinder();
   print("el resultado del ejercicio 7 es $resultado7");
-  
 
- 
-
+  //EJERCICIO 8
   var problema8 = new sumOfEvents();
   int resultado8 = problema8.sumofevents();
   print("el resultado del ejercicio 8 es $resultado8");
-*/
 
-  //EJERCICIO 9
-  var problema9 = new stringLength();
-  int resultado9 = problema9.stringlength();
-  print("el resultado del ejercicio 9 es $resultado9");
+  //EJERCICIO 10
+  var problema10 = new stringLength();
+  int resultado10 = problema10.stringlength();
+  print("el resultado del ejercicio 10 es $resultado10");
+
+  //EJERCICIO 11
+  var problema11 = new averageOfFour();
+  double resultado11 = problema11.averageoffour();
+  print("el resultado del ejercicio 11 es $resultado11");
+
+  //EJERCICIO 12
+  var problema12 = new smallestOfFive();
+  int resultado12 = problema12.smallesoffive();
+  print("el resultado del ejercicio 12 es $resultado12");
+
+  //EJERCICIO 13
+  var problema13 = new vowelCounter();
+  int resultado13 = problema13.vowelcounter();
+  print("el resultado del ejercicio 13 es $resultado13");
+
+  //EJERCICIO 14
+  var problema14 = new factorialFinder();
+  int resultado14 = problema14.factorialfinder();
+  print("el resultado del ejercicio 14 es $resultado14");
+
+  //EJERCICIO 15
+  var problema15 = new inRangeValidator();
+  String resultado15 = problema15.inrangevalidator();
+  print("el resultado del ejercicio 15 es $resultado15");
 }
 
 class positivePower {
@@ -286,5 +303,206 @@ class stringLength {
 
     String entrada = stdin.readLineSync()!;
     return entrada.length;
+  }
+}
+
+class averageOfFour {
+  double averageoffour() {
+    bool esNum = false;
+    double? numero1;
+    double? numero2;
+    double? numero3;
+    double? numero4;
+    print("escribe el numero 1");
+    String entrada = stdin.readLineSync()!;
+    esNum = esNumero(entrada);
+    while (!esNum) {
+      print("no es un numero, ingresa uno valido");
+      entrada = stdin.readLineSync()!;
+      esNum = esNumero(entrada);
+    }
+    numero1 = double.tryParse(entrada);
+    esNum = false;
+    print("escribe el numero 2");
+    entrada = stdin.readLineSync()!;
+    esNum = esNumero(entrada);
+    while (!esNum) {
+      print("no es un numero, ingresa uno valido");
+      entrada = stdin.readLineSync()!;
+      esNum = esNumero(entrada);
+    }
+    numero2 = double.tryParse(entrada);
+    esNum = false;
+    print("escribe el numero 3");
+    entrada = stdin.readLineSync()!;
+    esNum = esNumero(entrada);
+    while (!esNum) {
+      print("no es un numero, ingresa uno valido");
+      entrada = stdin.readLineSync()!;
+      esNum = esNumero(entrada);
+    }
+    numero3 = double.tryParse(entrada);
+    esNum = false;
+    print("escribe el numero 4");
+    entrada = stdin.readLineSync()!;
+    esNum = esNumero(entrada);
+    while (!esNum) {
+      print("no es un numero, ingresa uno valido");
+      entrada = stdin.readLineSync()!;
+      esNum = esNumero(entrada);
+    }
+    numero4 = double.tryParse(entrada);
+    double promedio = (numero1! + numero2! + numero3! + numero4!) / 4;
+    return promedio;
+  }
+}
+
+class smallestOfFive {
+  int smallesoffive() {
+    bool esNum = false;
+    int? numero1;
+    int? numero2;
+    int? numero3;
+    int? numero4;
+    int? numero5;
+    int valorMenor = 9999999999;
+    print("escribe el numero 1");
+    String entrada = stdin.readLineSync()!;
+    esNum = esNumero(entrada);
+    while (!esNum) {
+      print("no es un numero, ingresa uno valido");
+      entrada = stdin.readLineSync()!;
+      esNum = esNumero(entrada);
+    }
+    numero1 = int.tryParse(entrada);
+    if (numero1! < valorMenor) {
+      valorMenor = numero1;
+    }
+    esNum = false;
+    print("escribe el numero 2");
+    entrada = stdin.readLineSync()!;
+    esNum = esNumero(entrada);
+    while (!esNum) {
+      print("no es un numero, ingresa uno valido");
+      entrada = stdin.readLineSync()!;
+      esNum = esNumero(entrada);
+    }
+    numero2 = int.tryParse(entrada);
+    if (numero2! < valorMenor) {
+      valorMenor = numero2;
+    }
+    esNum = false;
+    print("escribe el numero 3");
+    entrada = stdin.readLineSync()!;
+    esNum = esNumero(entrada);
+    while (!esNum) {
+      print("no es un numero, ingresa uno valido");
+      entrada = stdin.readLineSync()!;
+      esNum = esNumero(entrada);
+    }
+    numero3 = int.tryParse(entrada);
+    if (numero3! < valorMenor) {
+      valorMenor = numero3;
+    }
+    esNum = false;
+    print("escribe el numero 4");
+    entrada = stdin.readLineSync()!;
+    esNum = esNumero(entrada);
+    while (!esNum) {
+      print("no es un numero, ingresa uno valido");
+      entrada = stdin.readLineSync()!;
+      esNum = esNumero(entrada);
+    }
+    numero4 = int.tryParse(entrada);
+    if (numero4! < valorMenor) {
+      valorMenor = numero4;
+    }
+    esNum = false;
+    print("escribe el numero 5");
+    entrada = stdin.readLineSync()!;
+    esNum = esNumero(entrada);
+    while (!esNum) {
+      print("no es un numero, ingresa uno valido");
+      entrada = stdin.readLineSync()!;
+      esNum = esNumero(entrada);
+    }
+    numero5 = int.tryParse(entrada);
+    if (numero5! < valorMenor) {
+      valorMenor = numero5;
+    }
+    return valorMenor;
+  }
+}
+
+class vowelCounter {
+  int vowelcounter() {
+    int contadorVocales = 0;
+    print("Escribe una palabra");
+    String entrada = stdin.readLineSync()!.toLowerCase();
+    for (int i = 0; i < entrada.length; i++) {
+      switch (entrada[i]) {
+        case 'a':
+          contadorVocales++;
+          break;
+        case 'e':
+          contadorVocales++;
+          break;
+        case 'i':
+          contadorVocales++;
+          break;
+
+        case 'o':
+          contadorVocales++;
+          break;
+        case 'u':
+          contadorVocales++;
+          break;
+      }
+    }
+    return contadorVocales;
+  }
+}
+
+class factorialFinder {
+  int factorialfinder() {
+    bool esNum = false;
+    int resultado = 1;
+    int? numero = 0;
+    print("ingresa un numero");
+    String entrada = stdin.readLineSync()!;
+    esNum = esNumero(entrada);
+    while (!esNum) {
+      print("debes ingresar un numero valido");
+      entrada = stdin.readLineSync()!;
+      esNum = esNumero(entrada);
+    }
+    numero = int.tryParse(entrada);
+
+    for (int i = 1; i < numero! + 1; i++) {
+      resultado = resultado * i;
+    }
+    return resultado;
+  }
+}
+
+class inRangeValidator {
+  String inrangevalidator() {
+    bool esNum = false;
+    String? resultado;
+    print("Escribe un numero");
+    String? entrada = stdin.readLineSync();
+    esNum = esNumero(entrada);
+    while (!esNum) {
+      print("escribe un numero valido");
+      entrada = stdin.readLineSync();
+      esNum = esNumero(entrada);
+    }
+    int? numero = int.tryParse(entrada!);
+    if (numero! >= 10 && numero <= 20) {
+      resultado = "esta en el rango";
+    } else {
+      resultado = "no esta en el rango";
+    }
+    return resultado;
   }
 }
