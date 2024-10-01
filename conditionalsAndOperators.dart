@@ -35,12 +35,25 @@ void main() {
   var problema6 = new taxCalculator();
   String resultado6 = problema6.taxcalculator();
   print("el resultado del ejercicio 6 es $resultado6");
-  */
+  
 
   //EJERCICIO 7
   var problema7 = new remainderFinder();
   int resultado7 = problema7.remainderfinder();
   print("el resultado del ejercicio 7 es $resultado7");
+  
+
+ 
+
+  var problema8 = new sumOfEvents();
+  int resultado8 = problema8.sumofevents();
+  print("el resultado del ejercicio 8 es $resultado8");
+*/
+
+  //EJERCICIO 9
+  var problema9 = new stringLength();
+  int resultado9 = problema9.stringlength();
+  print("el resultado del ejercicio 9 es $resultado9");
 }
 
 class positivePower {
@@ -251,4 +264,27 @@ bool esNumero(String? input) {
   }
 
   return int.tryParse(input) != null;
+}
+
+class sumOfEvents {
+  double? residuo;
+  int suma = 0;
+  int sumofevents() {
+    for (int i = 1; i < 51; i++) {
+      residuo = i % 2;
+      if (residuo == 0) {
+        suma = suma + i;
+      }
+    }
+    return suma;
+  }
+}
+
+class stringLength {
+  int stringlength() {
+    print("Ingresa una palabra");
+
+    String entrada = stdin.readLineSync()!;
+    return entrada.length;
+  }
 }
